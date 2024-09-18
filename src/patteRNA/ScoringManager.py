@@ -33,11 +33,15 @@ class ScoringManager:
     def parse_motifs(self):
 
         expression = self.run_config['motif']
+        logger.info('expression from parse_motifs is {}'.format(expression))
         expression = expression.replace('(', r'\(')
         expression = expression.replace('.', r'\.')
         expression = expression.replace(')', r'\)')
+        logger.info('New expression is {}'.format(expression))
         motifs = exrex.generate(expression)
+        logger.info('motifs using exrex is {}'.format(motifs))
         self.motifs = list(filter(rnalib.valid_db, motifs))
+        logger.info('motifs after filtering is {}'.format(self.motifs))
 
     def import_data(self, dataset):
         self.dataset = dataset
