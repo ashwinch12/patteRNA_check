@@ -31,7 +31,7 @@ These instructions will set up patteRNA as a command line tool.
 Installation is done directly from source. For that, clone this repository using the commands:
 
 ```
-git clone https://github.com/AviranLab/patteRNA.git
+git clone https://github.com/ashwinch12/patteRNA_check.git
 cd patteRNA
 ```
 
@@ -44,7 +44,7 @@ python setup.py install
 You can also specify a local installation using the commands:
 
 ```
-python setup.py install --user
+python3.9 setup.py install --user
 echo 'export PATH="$PATH:~/.local/bin"' >> ~/.bashrc; source ~/.bashrc
 ```
 
