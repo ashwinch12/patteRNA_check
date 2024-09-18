@@ -1,8 +1,8 @@
-import string
+import string,logging
 import numpy as np
 
 BASES = ('A', 'T', 'G', 'C', 'U', 'N')
-
+logger = logging.getLogger(__name__)
 PAIRING_TABLE = {'A': ('U', 'T'),
                  'U': ('A', 'G'),
                  'G': ('C', 'U', 'T'),
@@ -66,7 +66,9 @@ def valid_db(db):
 
 
 def check_sequence_constraints(seq, db):
+    logger.info('input for check_seq_constraints is {} {}'.format(seq,db))
     partners, _ = compute_pairing_partners(db)
+    logger.info('partners from check_seq_constraints is {}'.format(partners))
     return is_valid_pairing(seq, partners)
 
 
@@ -116,6 +118,7 @@ def compute_pairing_partners(db, ignore_invalid=False):
 def compile_motif_constraints(bps, ups, start):
     bps = [(bp[0] + start, bp[1] + start) for bp in bps]
     ups = [(up[0] + start, -999) for up in ups]
+    logger.info('ups and bps from compile_motif_constraints {} {}'.format(ups,bps))
     bps.extend(ups)
     return bps
 
