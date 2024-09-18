@@ -19,9 +19,9 @@ setup(
     version=__version__,
     description="Rapid mining of RNA secondary structure motifs from profiling data.",
     long_description=long_description,
-    url="https://github.com/AviranLab/patteRNA",
-    author="Pierce Radecki",
-    author_email="peradecki@ucdavis.edu",
+    url="https://github.com/ashwinch12/patteRNA_check",
+    author="Ashwin Amalaruban",
+    author_email="ashm@ucdavis.edu",
     license="BSD-2",
     keywords="RNA structure mining",
 
